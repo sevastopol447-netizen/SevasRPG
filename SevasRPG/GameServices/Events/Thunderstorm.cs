@@ -10,6 +10,5 @@ namespace SevasRPG.GameServices.Events
     internal class Thunderstorm
     {
         public string Description = "Дощ переріс у зливу! Тепер взагалі нічого не видно!";
-        public Action<Player> ApplyEffect;
     }
 }

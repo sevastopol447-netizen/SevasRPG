@@ -46,15 +46,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entities\Armor.cs" />
-    <Compile Include="Entities\Enemy.cs" />
-    <Compile Include="Entities\Weapon.cs" />
-    <Compile Include="Entities\Player.cs" />
-    <Compile Include="Game.cs">
+    <Compile Include="Entities\Characters\Character.cs" />
+    <Compile Include="Entities\Items\Armor.cs" />
+    <Compile Include="Entities\Characters\Enemies\Enemy.cs" />
+    <Compile Include="Entities\Items\Item.cs" />
+    <Compile Include="Entities\Items\Weapon.cs" />
+    <Compile Include="Entities\Characters\Player.cs" />
+    <Compile Include="Entities\ShopItem.cs" />
+    <Compile Include="Forms\Game.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Game.Designer.cs">
+    <Compile Include="Forms\Game.Designer.cs">
       <DependentUpon>Game.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Shop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Shop.Designer.cs">
+      <DependentUpon>Shop.cs</DependentUpon>
     </Compile>
     <Compile Include="GameServices\Events\Forge.cs" />
     <Compile Include="GameServices\Events\Cemists.cs" />
@@ -66,18 +75,26 @@
     <Compile Include="GameServices\Events\Shop.cs" />
     <Compile Include="GameServices\Events\DroppedOnFloor.cs" />
     <Compile Include="GameServices\Events\Rain.cs" />
-    <Compile Include="Welcome.cs">
+    <Compile Include="Utils\ArmorGenerator.cs" />
+    <Compile Include="Utils\CustomRandomizer.cs" />
+    <Compile Include="Utils\MessageHelper.cs" />
+    <Compile Include="Utils\ProgressBarValue.cs" />
+    <Compile Include="Forms\Welcome.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Welcome.Designer.cs">
+    <Compile Include="Forms\Welcome.Designer.cs">
       <DependentUpon>Welcome.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Game.resx">
+    <Compile Include="Utils\WeaponGenerator.cs" />
+    <EmbeddedResource Include="Forms\Game.resx">
       <DependentUpon>Game.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Welcome.resx">
+    <EmbeddedResource Include="Forms\Shop.resx">
+      <DependentUpon>Shop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Welcome.resx">
       <DependentUpon>Welcome.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

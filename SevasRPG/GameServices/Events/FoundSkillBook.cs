@@ -10,6 +10,5 @@ namespace SevasRPG.GameServices.Events
     internal class FoundSkillBook
     {
         public string Description = "Ти собі ідеш і помічаєш на дорозі лежить забута книжка.";
-        public Action<Player> ApplyEffect;
     }
 }

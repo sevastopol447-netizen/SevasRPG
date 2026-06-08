@@ -10,6 +10,5 @@ namespace SevasRPG.GameServices.Events
     internal class DroppedOnFloor
     {
         public string Description = "Ти ідеш собі і бачиш на дорозі цінне щось лежить.";
-        public Action<Player> ApplyEffect;
     }
 }

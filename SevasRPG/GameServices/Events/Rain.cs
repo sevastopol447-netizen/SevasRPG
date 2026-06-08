@@ -10,6 +10,5 @@ namespace SevasRPG.GameServices.Events
     internal class Rain
     {
         public string Description = "Розпочався дощ! Видимість стала гірше!";
-        public Action<Player> ApplyEffect;
     }
 }

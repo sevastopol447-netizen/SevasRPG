@@ -1,4 +1,4 @@
-﻿namespace SevasRPG
+﻿namespace SevasRPG.Forms
 {
     partial class Welcome
     {
@@ -76,6 +76,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(382, 153);
+            this.ControlBox = false;
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button2);

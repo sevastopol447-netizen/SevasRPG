@@ -10,6 +10,5 @@ namespace SevasRPG.GameServices.Events
     internal class Shop
     {
         public string Description = "Ти проходиш повз магазин. Варто ззайти туди, може там є щось що знадобиться?";
-        public Action<Player> ApplyEffect;
     }
 }
