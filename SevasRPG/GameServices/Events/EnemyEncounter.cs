@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SevasRPG.GameServices.Events
 {
-    internal class EemyEncounter
+    internal class EnemyEncounter
     {
         public string Description = "Зза повороту на тебе вистрибує ворог!!!";
     }

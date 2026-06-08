@@ -10,23 +10,31 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 namespace SevasRPG.Forms
 {
     public partial class Game : Form
     {
         private Player player;
-        
+        List<Event> randomEventList = new List<Event>();
+
         public Game(Player player)
         {
             InitializeComponent();
 
             this.player = player;
             labelName.Text = player.getName();
+
+            randomEventList.Add(new DroppedOnFloor());
+            randomEventList.Add(new Lost());
+            randomEventList.Add(new FoundSkillBook());
         }
         public void AddText(string txt)
         {
             textBox1.AppendText(txt + Environment.NewLine);
+            //listBox1.Items.Add("");
         }
+
         public void GenerateAction()
         {
             int num = CustomRandomizer.generateNumber(1, 100);
@@ -61,7 +69,10 @@ namespace SevasRPG.Forms
             }
             else
             {
-                AddText("Нічого не сталось");
+                Event ev = this.randomEventList[CustomRandomizer.generateNumber(this.randomEventList.Count)];
+                ev.execute(player);
+                AddText(ev.getDescription());
+
             }
         }
         private void button1_Click(object sender, EventArgs e)

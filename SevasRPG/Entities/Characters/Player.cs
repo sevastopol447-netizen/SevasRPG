@@ -52,6 +52,11 @@ namespace SevasRPG.Entities.Characters
             }
         }
 
+        protected void createMpValue(int mp)
+        {
+            MP = new ProgressBarValue(mp);
+        }
+
         private void levelUp()
         {
             this._level += 1;
@@ -66,6 +71,49 @@ namespace SevasRPG.Entities.Characters
             criticalChance = (int)Math.Ceiling((double)agility * 0.5);
             this.createHpValue(endurance * 10);
             this.MP = new ProgressBarValue(intelligence * 5);
+        }
+
+        public void increaseSilver(int value)
+        {
+            this.silver += value;
+        }
+
+        public bool decreaseSilver(int value)
+        {
+            if (this.silver - value < 0)
+            {
+                return false;
+            } else
+            {
+                this.silver -= value;
+                return true;
+            }
+        }
+
+        public void setWeapon(Weapon weapon) => this.weapon = weapon;
+        public void setArmor(Armor armor) => this.armor = armor;
+
+        public void addStrength(int value)
+        {
+            this.strength += value;
+        }
+
+        public void addEndurance(int value)
+        {
+            this.endurance += value;
+            this.createHpValue(endurance * 10);
+        }
+
+        public void addIntelligence(int value)
+        {
+            this.intelligence += value;
+            this.createMpValue(intelligence * 5);
+        }
+
+        public void addAgility(int value)
+        {
+            this.agility = value;
+            criticalChance = (int)Math.Ceiling((double)agility * 0.5);
         }
     }
 }

@@ -15,5 +15,10 @@ namespace SevasRPG.Utils
         {
             return random.Next(min, max + 1);
         }
+
+        public static int generateNumber(int max)
+        {
+            return random.Next(max);
+        }
     }
 }
