@@ -28,6 +28,13 @@ namespace SevasRPG.Forms
             randomEventList.Add(new DroppedOnFloor());
             randomEventList.Add(new Lost());
             randomEventList.Add(new FoundSkillBook());
+
+            progressBar1.Value = player.HP.getValue();
+            progressBar2.Value = player.MP.getValue();
+        }
+        public void getPlayer (Player player)
+        {
+            this.player = player;
         }
         public void AddText(string txt)
         {
@@ -35,6 +42,27 @@ namespace SevasRPG.Forms
             //listBox1.Items.Add("");
         }
 
+        public void UpdateStats()
+        {
+            labelSilver.Text = Convert.ToString(player.getSilver());
+
+            if (player.getWeapon() != null)
+            {
+                labelWeapon.Text = Convert.ToString(player.getWeapon().getVal());
+            }
+            else
+            {
+                labelWeapon.Text = "-";
+            }
+            if (player.getArmor() != null)
+            {
+                labelArmor.Text = Convert.ToString(player.getArmor().getVal());
+            }
+            else
+            {
+                labelArmor.Text = "-";
+            }
+        }
         public void GenerateAction()
         {
             int num = CustomRandomizer.generateNumber(1, 100);
@@ -78,6 +106,7 @@ namespace SevasRPG.Forms
         private void button1_Click(object sender, EventArgs e)
         {   
             GenerateAction();
+            UpdateStats();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -86,6 +115,11 @@ namespace SevasRPG.Forms
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Game_Load(object sender, EventArgs e)
         {
 
         }

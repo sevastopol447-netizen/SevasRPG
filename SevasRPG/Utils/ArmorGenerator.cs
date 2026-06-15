@@ -16,10 +16,7 @@ namespace SevasRPG.Utils
             int armor = CustomRandomizer.generateNumber(1, 20);
             int price = armor * 15 + CustomRandomizer.generateNumber(-20, 60);
 
-            if (price < 10)
-            {
-                price = 10;
-            }
+            if (price < 10) price = 10;
 
             return new Armor(typeNames[CustomRandomizer.generateNumber(0, 5)], price, armor);
         }

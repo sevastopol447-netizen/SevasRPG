@@ -115,5 +115,22 @@ namespace SevasRPG.Entities.Characters
             this.agility = value;
             criticalChance = (int)Math.Ceiling((double)agility * 0.5);
         }
+
+        public bool takeDamage(int dmg)
+        {
+            return (HP.decrease(dmg - armor.getVal()));
+        }
+        public int attack()
+        {
+            int num = CustomRandomizer.generateNumber(100);
+            if (num > criticalChance)
+            {
+                return 2*(weapon.getVal() + strength);
+            }
+            else
+            {
+                return weapon.getVal() + strength;
+            }
+        }
     }
 }

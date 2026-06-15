@@ -1,10 +1,11 @@
 ﻿using SevasRPG.Entities.Characters;
+using SevasRPG.Entities.Items;
+using SevasRPG.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SevasRPG.Utils;
 
 namespace SevasRPG.Entities.Characters.Enemies
 {
@@ -30,9 +31,14 @@ namespace SevasRPG.Entities.Characters.Enemies
             this.rewardXp = generateValue(50, -10, 50);
         }
 
-        public int getAttack() => attack;
+        public int Attack() => attack;
         public int getDefence() => defence;
         public int getRewardsilver() => rewardsilver;
         public int getRewardXp() => rewardXp;
+
+        public bool takeDamage(int dmg)
+        {
+            return (HP.decrease(dmg - defence));
+        }
     }
 }

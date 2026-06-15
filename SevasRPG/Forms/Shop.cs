@@ -19,7 +19,7 @@ namespace SevasRPG.Forms
             _parentForm = form;
             this.player = player;
 
-            label1.Text = "У вас" + Convert.ToString(player.getSilver()) + "срібла";
+            label1.Text = "У вас " + Convert.ToString(player.getSilver()) + " срібла";
 
             int num = CustomRandomizer.generateNumber(1, 10);
             ArmorGenerator ArmorGenerator = new ArmorGenerator();
@@ -58,6 +58,7 @@ namespace SevasRPG.Forms
 
         private void button2_Click(object sender, EventArgs e)
         {
+            _parentForm.getPlayer(player);
             _parentForm.Visible = true;
             this.Close();
         }
@@ -81,9 +82,12 @@ namespace SevasRPG.Forms
             else
             {
                 MessageBox.Show("Покупка відбулась успішно!", "Покупка", MessageBoxButtons.OK, MessageBoxIcon.None);
+                player.decreaseSilver(selectedShopItem.Price);
             }
 
             listBox1.Items.Remove(selectedShopItem);
+
+            label1.Text = "У вас " + Convert.ToString(player.getSilver()) + " срібла";
         }
     }
 }

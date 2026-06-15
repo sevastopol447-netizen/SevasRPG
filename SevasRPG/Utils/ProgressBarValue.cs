@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Xml.Linq;
 
 namespace SevasRPG.Utils
 {
@@ -8,6 +9,7 @@ namespace SevasRPG.Utils
         private int _maximum = 100;
         private int _value = 0;
 
+        public int getValue() => _value;
         public ProgressBarValue(int max, int min = 0)
         {
             init(max, min);
